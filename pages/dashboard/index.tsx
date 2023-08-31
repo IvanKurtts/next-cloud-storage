@@ -19,7 +19,7 @@ const DashboardPage: NextPage<Props> = ({ items }) => {
     </DashboardLayout>
   );
 };
-
+// @ts-ignore
 DashboardPage.getLayout = (page: React.ReactNode) => {
   return <Layout title="Dashboard | Main">{page}</Layout>;
 };

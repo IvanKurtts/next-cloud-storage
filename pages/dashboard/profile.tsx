@@ -41,7 +41,7 @@ const DashboardProfilePage: NextPage<Props> = ({ userData }) => {
     </main>
   );
 };
-
+// @ts-ignore
 DashboardProfilePage.getLayout = (page: React.ReactNode) => {
   return <Layout title="Dashboard | Profile">{page}</Layout>;
 };

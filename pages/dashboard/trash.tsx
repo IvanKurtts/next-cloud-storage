@@ -19,7 +19,7 @@ const DashboardTrash: NextPage<Props> = ({ items }) => {
     </DashboardLayout>
   );
 };
-
+// @ts-ignore
 DashboardTrash.getLayout = (page: React.ReactNode) => {
   return <Layout title="Dashboard | Trash">{page}</Layout>;
 };
