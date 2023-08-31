@@ -31,7 +31,7 @@ export const FileActions: React.FC<FileActionsProps> = ({
         </Button>
       </Popconfirm>
       <a
-        href={`${process.env.NEXT_PUBLIC_BASE_URL}/uploads/` + file?.filename}
+        href={`${process.env.NEXT_PUBLIC_SERVER_URL}/uploads/` + file?.filename}
         download
         onClick={(e) => e.stopPropagation()}
         target="_blank"
