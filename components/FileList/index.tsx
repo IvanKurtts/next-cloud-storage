@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./FileList.module.scss";
-import { FileItem } from "../../api/dto/files.dto"; 
-import { FileCard } from "../FileCard"; 
+import { FileItem } from "../../api/dto/files.dto";
+import { FileCard } from "../FileCard";
 import Selecto from "react-selecto";
 
 export type FileSelectType = "select" | "unselect";
@@ -12,8 +12,15 @@ interface FileListProps {
 }
 
 export const FileList: React.FC<FileListProps> = ({ items, onFileSelect }) => {
+  let files;
+  useEffect(() => {
+    if (document) {
+      files = document.getElementById("files");
+    }
+  }, []);
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} id="files">
       {items.map((item) => (
         <div data-id={item.id} key={item.id} className="file">
           <FileCard filename={item.filename} originalname={item.originalname} />
@@ -21,7 +28,7 @@ export const FileList: React.FC<FileListProps> = ({ items, onFileSelect }) => {
       ))}
 
       <Selecto
-        container=".files"
+        container={files}
         selectableTargets={[".file"]}
         selectByClick
         hitRate={10}
