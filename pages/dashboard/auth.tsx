@@ -1,0 +1,33 @@
+import { NextPage } from "next";
+import { LoginForm } from "../../components/auth/LoginForm";
+import Head from "next/head";
+import { Tabs } from "antd";
+import { RegisterForm } from "../../components/auth/RegisterForm";
+
+const AuthPage: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Dashboard | Auth</title>
+      </Head>
+      <main style={{ width: 400, margin: "50px auto" }}>
+        <Tabs
+          items={[
+            {
+              label: "Sign in",
+              key: "1",
+              children: <LoginForm />,
+            },
+            {
+              label: "Sign up",
+              key: "2",
+              children: <RegisterForm />,
+            },
+          ]}
+        />
+      </main>
+    </>
+  );
+};
+
+export default AuthPage;
